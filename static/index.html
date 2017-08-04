@@ -1,0 +1,20 @@
+<html>
+  <head>
+     <title>MyCar</title>
+     <script language="JavaScript" type="text/javascript" src="/static/jquery-3.2.1.min.js"></script>
+  </head>
+  <body>
+     <script language="JavaScript">
+	document.write('<img src="' + window.location.protocol + '//' + window.location.hostname + ':2222/?action=stream" />' );
+    </script>
+    <br />
+    <button onclick="$.post('/move?direction=left')">left</button>
+    <button onclick="$.post('/move?direction=right')">right</button>
+    <button onclick="$.post('/move?direction=forward')">forward</button>
+    <button onclick="$.post('/move?direction=back')">back</button>
+    <button onclick="$.post('/move?direction=stop')">stop</button>
+    <br /> <br />
+    <input type="text" id="content">
+    <button onclick="$.post('/speak', {content: $('#content')[0].value})">Speak</button>
+  </body>
+</html>
