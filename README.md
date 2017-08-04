@@ -1,4 +1,6 @@
 # picar
+最终的效果图 <br />
+![alt text](https://github.com/hermithuang/picar/blob/master/pic/IMG_20170804_121539.jpg)
 首先是连线。需要使用一个L298N电机驱动板模块，接线包括:<br />
 
 1、单侧电机并联。L298 两边的out各接一边电机的两个脚。注意要同侧电机方向运行方向相同。 <br />
@@ -11,7 +13,6 @@
 pip install web.py <br />
 ./car.py 
 ```
-
 可以在 8080上起一个页面。<br />
 
 然后就是如何获取图像。这里有几个点 <br />
@@ -20,7 +21,6 @@ pip install web.py <br />
 3、最终解决方法，用[mjpg-streamer](https://github.com/jacksonliam/mjpg-streamer)，编译安装完了之后，用以下命令启动。这样在2222端口上?action=stream可以出现图像。 <br />
 
 ```
-mjpg_streamer -o "output_http.so -w /root/git/mjpg-streamer/mjpg-streamer-experimental/www/ -p 2222" -i "input_raspicam.so -x 360 -y 240 -d 200 -fps 15 -q 50 -rot 180 <br />
-
+mjpg_streamer -o "output_http.so -w /root/git/mjpg-streamer/mjpg-streamer-experimental/www/ -p 2222" -i "input_raspicam.so -x 360 -y 240 -d 200 -fps 15 -q 50 -rot 180
 ```
 最终访问IP：8080/static/index.html就可以看到最终的效果了。 <br />
