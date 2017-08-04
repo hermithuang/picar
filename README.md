@@ -8,16 +8,15 @@
 3、四个input输入接树莓派4个gpio口。<br />
 
 然后就是控制的页面，使用web.py做了一个。 <br />
-命令：<br />
 ```
-pip install web.py <br />
+pip install web.py
 ./car.py 
 ```
 可以在 8080上起一个页面。<br />
 
 然后就是如何获取图像。这里有几个点 <br />
 1、用jwplayer，这种可以在PC上看到图像，但是android上看不到图像。不支持 <br />
-2、用[psips](https://github.com/AndyA/psips)，这种的话都可以看到图像，但电脑上需要加个插件，而且形式上是生成一个个ts文件，可以拉，单不是实时图像。 <br />
+2、用[psips](https://github.com/AndyA/psips)，这种的话都可以看到图像，但电脑上需要加个插件，而且形式上是生成一个个ts文件，可以拖动进度条，但不是实时图像。 <br />
 3、最终解决方法，用[mjpg-streamer](https://github.com/jacksonliam/mjpg-streamer)，编译安装完了之后，用以下命令启动。这样在2222端口上?action=stream可以出现图像。 <br />
 
 ```
